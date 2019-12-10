@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="VaultBoy.ViewModel.Tabs.CollectionEditorTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:fa5="http://schemas.fontawesome.com/icons/"
+             xmlns:tabs="clr-namespace:VaultBoy.ViewModel.Tabs"
+             xmlns:propertyGrid="clr-namespace:Xceed.Wpf.Toolkit.PropertyGrid;assembly=Xceed.Wpf.Toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             d:DataContext="{d:DesignInstance tabs:CollectionEditorViewModel}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" >
+            <Button Name="EditFieldsButton" IsEnabled="{Binding Collection.Class.HasOptionalFields}" Command="{Binding EditFieldsCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <fa5:SvgAwesome Icon="Solid_Edit" Height="16" Width="16" Margin="3,0,0,0"></fa5:SvgAwesome>
+                    <TextBlock Margin="3,0,3,0">Edit fields</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="ChangeVaultButton" Margin="3, 0, 0, 0" Command="{Binding ChangeVaultCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <fa5:SvgAwesome Icon="Solid_Database" Height="16" Width="16" Margin="3,0,0,0"></fa5:SvgAwesome>
+                    <TextBlock Margin="3,0,3,0">Change vault</TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <propertyGrid:PropertyGrid Grid.Row="2"
+                                   Name="CollectionPropGrid"
+                                   ShowSortOptions="False" 
+                                   SelectedObject="{Binding Proxy}"
+                                   SelectedObjectName="{Binding Collection.FullPath}"
+                                   SelectedObjectTypeName="Collection preview">
+        </propertyGrid:PropertyGrid>
+    </Grid>
+</UserControl>

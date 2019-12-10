@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <LangVersion>7</LangVersion>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <Platforms>x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="VaultLib.Core" Version="1.0.25" />
+  </ItemGroup>
+</Project>

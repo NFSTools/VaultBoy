@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Resources\hashes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FontAwesome5" Version="2.0.0" />
+    <PackageReference Include="MahApps.Metro" Version="2.0.0-alpha0660" />
+    <PackageReference Include="MiqM.Xceed.Wpf.Toolkit.NETCore" Version="3.4.0.1" />
+    <PackageReference Include="MvvmLightStd10" Version="5.4.1.2" />
+    <PackageReference Include="System.ComponentModel.Composition" Version="4.7.0" />
+    <FrameworkReference Include="Microsoft.WindowsDesktop.App.WindowsForms" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VaultBoy.ProfileCore\VaultBoy.ProfileCore.csproj" />
+    <ProjectReference Include="..\VaultBoy.Profiles.MostWanted\VaultBoy.Profiles.MostWanted.csproj" />
+    <ProjectReference Include="..\VaultBoy.Profiles.TheRun\VaultBoy.Profiles.TheRun.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\hashes.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="VaultLib.Support.MostWanted" Version="1.0.18" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VaultBoy.ProfileCore\VaultBoy.ProfileCore.csproj" />
+    <ProjectReference Include="..\VaultBoy.Profiles.SpeedBase\VaultBoy.Profiles.SpeedBase.csproj" />
+  </ItemGroup>
+
+</Project>
